@@ -13,7 +13,7 @@
         </div>
       </li>
     </ul>
-    <p>{{ state.information.text }} - {{ moment(date).format("DD-MM-YYYY") }}</p>
+    <p>{{ state.information.text }} - {{ moment(date).format("DD/MM/YYYY") }}</p>
   </main>
 </template>
 
