@@ -26,7 +26,7 @@ const date = "2022-03-20 15:35:00";
 const state = reactive({
   seconds: 0,
   momentCreated: moment(),
-  musicLink: "",
+  musicLink: "https://www.youtube.com/watch?v=L5gMlsK2Gsc",
   information: {
     text: "Não tem jeito",
   },
