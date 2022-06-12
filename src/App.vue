@@ -1,5 +1,5 @@
 <template>
-  <main class="content" :style="`background: ${state.information.image}`">
+  <main class="content">
     <h1>Estamos juntos há...</h1>
     <ul class="counter-list">
       <li v-for="(count, index) in counter" :key="index" class="counter">
@@ -28,7 +28,6 @@ const state = reactive({
   momentCreated: moment(),
   musicLink: "",
   information: {
-    image: require("./assets/IMG_2589.jpg"),
     text: "Não tem jeito",
   },
 });
@@ -88,7 +87,7 @@ h1 {
 
 .counter {
   padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3.4px);
