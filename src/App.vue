@@ -38,7 +38,7 @@ const counter = computed(() => [
   { label: "anos", value: getDiff("years") },
   { label: "dias", value: getDiff("days") },
   { label: "minutos", value: getDiff("minutes") },
-  { label: "segunodos", value: getDiff("seconds") },
+  { label: "segundos", value: getDiff("seconds") },
 ]);
 
 setInterval(() => (state.momentCreated = moment()), 1000);
