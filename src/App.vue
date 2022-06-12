@@ -1,5 +1,5 @@
 <template>
-  <main class="content">
+  <main class="content" :style="`background: ${state.information.image}`">
     <h1>Estamos juntos há...</h1>
     <ul class="counter-list">
       <li v-for="(count, index) in counter" :key="index" class="counter">
@@ -7,44 +7,42 @@
         <p>{{ count.label }}</p>
       </li>
       <li class="counter">
-        <h2>{{ state.seconds.toLocaleString() }}</h2>
-        <p>segundos</p>
-      </li>
-      <li class="counter">
         <div class="music-text">
           <img src="./assets/music.svg" />
-          <a href="https://www.youtube.com/watch?v=L5gMlsK2Gsc" target="_blank"
-            >Nossa música</a
-          >
+          <a :href="state.musicLink" target="_blank">Nossa música</a>
         </div>
       </li>
     </ul>
-    <p>Não tem jeito - 20/03/2022</p>
+    <p>{{ state.information.text }} - {{ moment(date).format("L") }}</p>
   </main>
 </template>
 
 <script setup>
 import moment from "moment";
-import { computed, onBeforeMount, reactive } from "vue";
+import { computed, reactive } from "vue";
 
-const momentCreated = moment();
 const date = "2022-03-20 15:35:00";
-
-const getDiff = (type) => momentCreated.diff(date, type);
 
 const state = reactive({
   seconds: 0,
+  momentCreated: moment(),
+  musicLink: "",
+  information: {
+    image: require("./assets/IMG_2589.jpg"),
+    text: "Não tem jeito",
+  },
 });
+
+const getDiff = (type) => state.momentCreated.diff(date, type);
 
 const counter = computed(() => [
   { label: "anos", value: getDiff("years") },
   { label: "dias", value: getDiff("days") },
   { label: "minutos", value: getDiff("minutes") },
+  { label: "segunodos", value: getDiff("seconds") },
 ]);
 
-onBeforeMount(() => (state.seconds = getDiff("seconds")));
-
-setInterval(() => (state.seconds = moment().diff(date, "seconds")), 1000);
+setInterval(() => (state.momentCreated = moment()), 1000);
 </script>
 
 <style>
@@ -120,7 +118,7 @@ h1 {
   min-width: 28px;
 }
 
-.content > p{
+.content > p {
   font-family: "Pacifico", cursive;
 }
 </style>
