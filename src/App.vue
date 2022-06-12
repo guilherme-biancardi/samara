@@ -1,5 +1,5 @@
 <template>
-  <main class="content" :style="`background: ${state.information.image}`">
+  <main class="content">
     <h1>Estamos juntos há...</h1>
     <ul class="counter-list">
       <li v-for="(count, index) in counter" :key="index" class="counter">
@@ -21,15 +21,14 @@
 import moment from "moment";
 import { computed, reactive } from "vue";
 
-const date = "2022-03-20 15:35:00";
+const date = "2022-02-14 09:00:00";
 
 const state = reactive({
   seconds: 0,
   momentCreated: moment(),
-  musicLink: "",
+  musicLink: "https://www.youtube.com/watch?v=sEhOY55CSng",
   information: {
-    image: require("./assets/IMG_2589.jpg"),
-    text: "Não tem jeito",
+    text: "o nosso pra sempre é o agora!",
   },
 });
 
@@ -74,7 +73,7 @@ h1 {
   color: white;
   width: 100%;
   height: 100vh;
-  background: url("./assets/IMG_2589.jpg") no-repeat center;
+  background: url('./assets/WhatsApp Image 2022-06-12 at 01.39.41.jpeg') no-repeat center;
   background-size: cover;
   row-gap: 8px;
 }
@@ -88,7 +87,7 @@ h1 {
 
 .counter {
   padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3.4px);
