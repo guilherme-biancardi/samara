@@ -37,7 +37,7 @@ const getDiff = (type) => state.momentCreated.diff(date, type);
 const counter = computed(() => [
   { label: "anos", value: getDiff("years") },
   { label: "dias", value: getDiff("days") },
- { label: "horas", value: getDiff("hours") }
+ { label: "horas", value: getDiff("hours") },
   { label: "minutos", value: getDiff("minutes") },
   { label: "segundos", value: getDiff("seconds") },
 ]);
