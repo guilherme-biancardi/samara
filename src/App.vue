@@ -21,7 +21,7 @@
 import moment from "moment";
 import { computed, reactive } from "vue";
 
-const date = "2022-03-20 15:35:00";
+const date = "1994-03-11 12:00:00";
 
 const state = reactive({
   seconds: 0,
