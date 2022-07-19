@@ -53,7 +53,7 @@ setInterval(() => (state.momentCreated = moment()), 1000);
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.5em, calc(0.75em + 1vw), 1em);
+  font-size: clamp(0.5em, calc(0.75em + 1vw), 1.04em);
 }
 
 ul {
@@ -83,7 +83,7 @@ h1 {
 }
 
 .content h2{
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 800;
 }
 
@@ -101,7 +101,7 @@ h1 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3.5px);
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1em;
   min-width: 200px;
 }
 
@@ -135,10 +135,6 @@ h1 {
   .counter-list{
     width: 40%;
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .counter:last-child{
-    grid-column: 1 / 3;
   }
 }
 </style>
