@@ -38,7 +38,7 @@ const counter = computed(() => [
   { label: "anos", value: getDiff("years") },
   { label: "dias", value: getDiff("days") },
   { label: "minutos", value: getDiff("minutes") },
-  { label: "segunodos", value: getDiff("seconds") },
+  { label: "segundos", value: getDiff("seconds") },
 ]);
 
 setInterval(() => (state.momentCreated = moment()), 1000);
@@ -52,6 +52,7 @@ setInterval(() => (state.momentCreated = moment()), 1000);
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+  font-size: clamp(0.5em, calc(0.75em + 1vw), 1em);
 }
 
 ul {
@@ -62,6 +63,8 @@ h1 {
   font-family: "Pacifico", cursive;
   font-weight: 100;
   font-size: 1.8em;
+  color: #fff;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.75);
 }
 
 .content {
@@ -70,12 +73,17 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
   width: 100%;
   height: 100vh;
-  background: url("./assets/IMG_2589.jpg") no-repeat center;
+  background: url("./assets/background.jpeg") no-repeat center;
   background-size: cover;
   row-gap: 8px;
+}
+
+.content h2{
+  font-size: 1.5em;
+  font-weight: 800;
 }
 
 .counter-list {
@@ -87,12 +95,12 @@ h1 {
 
 .counter {
   padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
+  background: rgba(116, 116, 116, 0.4);
+  border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(3.4px);
+  backdrop-filter: blur(3.5px);
   text-align: center;
-  font-size: 1em;
+  font-size: 1.2em;
   min-width: 200px;
 }
 
@@ -109,7 +117,7 @@ h1 {
 
 .music-text a {
   font-family: "Pacifico", cursive;
-  color: white;
+  color: #fff;
   font-size: 1.2em;
 }
 
@@ -119,5 +127,17 @@ h1 {
 
 .content > p {
   font-family: "Pacifico", cursive;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.75);
+  font-size: 1.1em;
+}
+@media screen and (min-width: 1024px) {
+  .counter-list{
+    width: 40%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .counter:last-child{
+    grid-column: 1 / 3;
+  }
 }
 </style>
